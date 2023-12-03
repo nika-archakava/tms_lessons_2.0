@@ -16,4 +16,4 @@ class TestSelenium:
         driver.get(url)
         driver.save_screenshot(f'{page_title}_{int(datetime.now().timestamp())}.png')
         actual_page_title = driver.title
-        assert page_title in actual_page_title
+        assert page_title in actual_page_title, f'{page_title} does not include in {actual_page_title}'
