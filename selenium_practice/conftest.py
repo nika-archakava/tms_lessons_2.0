@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 
 
+
 @pytest.fixture
 def driver_chrome():
     options = webdriver.ChromeOptions()
