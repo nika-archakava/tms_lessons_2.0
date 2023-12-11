@@ -8,10 +8,6 @@ def read_given_info(file_path):
         return split_lines
 
 
-def json_format_data():
-    dict_a = {a[0]: a[1] for a in list_a}
-    return dict_a
-
 
 def write_json_file(file_path, some_dict):
     with open(file_path, "w", encoding="utf-8") as file:
