@@ -32,7 +32,8 @@ class TestClassPlaywright:
             " window.getComputedStyle(e).getPropertyValue('font-weight');"
             "}"
         )
-        assert title_font_weight_actual == title_font_weight_expected
+        assert title_font_weight_actual == title_font_weight_expected,\
+            'Стиль шрифта заголовка не "жирный"'
 
         modal_address = page.locator("xpath=(//*[@id='modalSet']//div[@class='descr'])")
         expect(modal_address).to_be_visible()
@@ -49,4 +50,5 @@ class TestClassPlaywright:
             expect(number).to_be_visible()
             expect(number).to_be_enabled()
             number_text = number.inner_text()
-            assert validate_phone_number(number_text)
+            assert validate_phone_number(number_text),\
+                'Неправильный формат мобильного телефона, ожидается: 8 (ХХХ) ХХХ-ХХ-ХХ'
